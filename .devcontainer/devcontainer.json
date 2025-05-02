@@ -4,7 +4,7 @@
   "dockerFile": "Dockerfile",
 
   "mounts": [
-    "source=${localWorkspaceFolder}/ccache,target=/ccache,type=bind,consistency=cached"
+    "source=${localWorkspaceFolder}/.ccache,target=/.ccache,type=bind,consistency=cached"
   ],
 
   "customizations":{
@@ -19,11 +19,11 @@
     }
   },
   "postCreateCommand": "uv venv",
+  "postStartCommand": "bash",
   "runArgs": ["--gpus", "all"],
-  "remoteUser": "root",
 
   "containerEnv": {
-    "CCACHE_DIR": "/ccache",
+    "CCACHE_DIR": "/.ccache",
     "UV_PROJECT_ENVIRONMENT": "/workspaces/.venv",
     "UV_LINK_MODE": "copy"
   }
