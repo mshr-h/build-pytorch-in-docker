@@ -1,0 +1,30 @@
+{
+  "name": "PyTorch Development Container",
+  "context": "..",
+  "dockerFile": "Dockerfile",
+
+  "mounts": [
+    "source=${localWorkspaceFolder}/ccache,target=/ccache,type=bind,consistency=cached"
+  ],
+
+  "customizations":{
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-vscode.cpptools"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/workspaces/.venv/bin/python"
+      },
+    }
+  },
+  "postCreateCommand": "uv venv",
+  "runArgs": ["--gpus", "all"],
+  "remoteUser": "root",
+
+  "containerEnv": {
+    "CCACHE_DIR": "/ccache",
+    "UV_PROJECT_ENVIRONMENT": "/workspaces/.venv",
+    "UV_LINK_MODE": "copy"
+  }
+}
