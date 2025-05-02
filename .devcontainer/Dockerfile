@@ -11,9 +11,11 @@ RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y \
   ccache \
   curl \
   git \
+  htop \
   libffi-dev \
   libomp-dev \
   libopenblas-dev \
+  mold \
   pkg-config \
   wget \
   && apt autoclean \
@@ -31,3 +33,8 @@ RUN groupadd --gid $USER_GID $USERNAME \
 
 USER $USERNAME
 WORKDIR /home/$USERNAME
+
+RUN ccache -M 25Gi \
+  ccache -F 0 \
+
+CMD ["/bin/bash"]

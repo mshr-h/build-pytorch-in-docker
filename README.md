@@ -3,10 +3,12 @@
 
 ```bash
 git clone --recursive https://github.com/pytorch/pytorch
-uv pip install setuptools
 source .venv/bin/activate
 cd pytorch
-uv pip install -r requirements
+uv pip install -r requirements.txt setuptools
+export CMAKE_C_COMPILER_LAUNCHER=ccache
+export CMAKE_CXX_COMPILER_LAUNCHER=ccache
+export CMAKE_CUDA_COMPILER_LAUNCHER=ccache
 USE_CUDA=1 python setup.py develop
 
 cd ../
