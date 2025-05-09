@@ -11,7 +11,9 @@
     "vscode": {
       "extensions": [
         "ms-python.python",
-        "ms-vscode.cpptools"
+        "ms-vscode.cpptools",
+        "mhutchie.git-graph",
+        "charliermarsh.ruff"
       ],
       "settings": {
         "python.defaultInterpreterPath": "/workspaces/.venv/bin/python"
