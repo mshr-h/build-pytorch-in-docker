@@ -20,7 +20,7 @@
       },
     }
   },
-  "postCreateCommand": "uv venv",
+  "postCreateCommand": "uv venv --python 3.11",
   "postStartCommand": "bash",
   "runArgs": ["--gpus", "all"],
 
