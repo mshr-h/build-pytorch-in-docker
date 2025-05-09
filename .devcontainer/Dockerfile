@@ -11,13 +11,17 @@ RUN apt update && DEBIAN_FRONTEND=noninteractive apt install -y \
   ccache \
   curl \
   git \
+  gnupg \
   htop \
   libffi-dev \
   libomp-dev \
   libopenblas-dev \
+  lsb-release \
   mold \
   pkg-config \
+  software-properties-common \
   wget \
+  && bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)" \
   && apt autoclean \
   echo 'export CCACHE_DIR=/home/$USERNAME/.ccache' >> /etc/profile && \
   echo 'export USE_CCACHE=1' >> /etc/profile && \
