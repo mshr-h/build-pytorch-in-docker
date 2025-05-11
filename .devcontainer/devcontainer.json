@@ -16,17 +16,15 @@
         "charliermarsh.ruff"
       ],
       "settings": {
-        "python.defaultInterpreterPath": "/workspaces/.venv/bin/python"
+        "python.defaultInterpreterPath": "/.venv/bin/python"
       },
     }
   },
-  "postCreateCommand": "uv venv --python 3.11",
   "postStartCommand": "bash",
   "runArgs": ["--gpus", "all"],
 
   "containerEnv": {
     "CCACHE_DIR": "/.ccache",
-    "UV_PROJECT_ENVIRONMENT": "/workspaces/.venv",
     "UV_LINK_MODE": "copy"
   }
 }

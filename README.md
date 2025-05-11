@@ -2,6 +2,7 @@
 [WIP] Build and Develop PyTorch with Docker
 
 ```bash
+uv venv --python 3.11
 git clone --recursive https://github.com/pytorch/pytorch
 source .venv/bin/activate
 cd pytorch
